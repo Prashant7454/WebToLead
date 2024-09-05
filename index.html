@@ -7,6 +7,7 @@
     <title>Lead Generation</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,8 @@
     <div class="container">
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL00000BbMzJ"
             method="POST">
-
+            <input type=hidden name='captcha_settings'
+                value='{"keyname":"github","fallback":"true","orgId":"00DdL00000BbMzJ","ts":""}'>
             <input type=hidden name="oid" value="00DdL00000BbMzJ">
             <input type=hidden name="retURL" value="https://prashant7454.github.io/WebToLead/welcome.html">
 
@@ -30,12 +32,13 @@
             <input id="email" maxlength="80" name="email" size="20" type="email" required /><br>
 
             <label for="phone">Phone</label>
-            <input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+            <input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
 
             <label for="city">City</label>
             <input id="city" maxlength="40" name="city" size="20" type="text" /><br>
-
-
+            <div style="display: flex; justify-content: center; margin-bottom: 15px;">
+                <div class="g-recaptcha" data-sitekey="6LcoRTcqAAAAAJUfzcjmPKqKX89WBjgHPBNDifjG"></div><br>
+            </div>
             <input class="button" type="submit" name="submit">
 
         </form>
